@@ -1,0 +1,8 @@
+<div class="heatmap">
+  <div *ngFor="let contribution of contributions" 
+       class="day" 
+       [ngStyle]="{'background-color': getColor(contribution.count)}">
+    <div class="date">{{ contribution.date }}</div>
+    <div class="count">{{ contribution.count }}</div>
+  </div>
+</div>

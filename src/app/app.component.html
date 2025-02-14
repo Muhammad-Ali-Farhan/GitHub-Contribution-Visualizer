@@ -1,0 +1,20 @@
+<div class="container" [class.dark]="darkMode">
+  <header>
+    <h1>GitHub Contribution Visualizer</h1>
+    <button class="mode-toggle" (click)="toggleDarkMode()">
+      {{ darkMode ? 'Light Mode' : 'Dark Mode' }}
+    </button>
+  </header>
+  
+  <app-user-input (querySubmitted)="onQuerySubmitted($event)"></app-user-input>
+  
+  <div *ngIf="loading" class="loading">Loading data...</div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  
+  <app-contribution-heatmap [contributions]="contributions"></app-contribution-heatmap>
+  <app-contribution-chart [contributions]="contributions"></app-contribution-chart>
+  
+  <footer>
+    <p>Demo Project by [Your Name]</p>
+  </footer>
+</div>

@@ -1,0 +1,9 @@
+<div class="user-input">
+  <input type="text" [(ngModel)]="username" placeholder="Enter GitHub username" />
+  <select [(ngModel)]="days">
+    <option [value]="30">Last 30 Days</option>
+    <option [value]="60">Last 60 Days</option>
+    <option [value]="90">Last 90 Days</option>
+  </select>
+  <button (click)="submitQuery()">Get Contributions</button>
+</div>
